@@ -1,0 +1,12 @@
+<phpunit bootstrap="./vendor/autoload.php" stopOnFailure="true" colors="true">
+    <testsuites>
+        <testsuite name="Random Tool Test Suite">
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory>./src</directory>
+        </whitelist>
+    </filter>
+</phpunit>

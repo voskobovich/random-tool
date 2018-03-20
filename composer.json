@@ -1,0 +1,40 @@
+{
+  "name": "voskobovich/random-tool",
+  "description": "",
+  "keywords": [
+    "random",
+    "utils",
+    "library"
+  ],
+  "homepage": "https://github.com/voskobovich/random-tool",
+  "type": "library",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/voskobovich/random-tool/issues",
+    "source": "https://github.com/voskobovich/random-tool"
+  },
+  "authors": [
+    {
+      "name": "Vitaly Voskobovich",
+      "email": "vitaly@voskobovich.com",
+      "homepage": "http://voskobovich.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "voskobovich\\RandomTool\\": "src",
+      "voskobovich\\RandomTool\\interfaces\\": "src/interfaces"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "voskobovich\\RandomTool\\Test\\": "tests"
+    }
+  }
+}

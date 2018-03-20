@@ -1,0 +1,18 @@
+language: php
+
+php:
+- 7.1
+- 7.2
+
+env:
+  global:
+    - secure: secure_github_oauth_token_generated_with_travis
+
+before_install:
+  - composer config -g github-oauth.github.com "$GITHUB_TOKEN"
+
+install:
+    - composer self-update
+    - composer install
+
+script: php vendor/bin/phpunit --configuration /Users/vitaly/Work/random-tool/phpunit.xml
