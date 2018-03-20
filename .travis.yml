@@ -15,4 +15,4 @@ install:
     - composer self-update
     - composer install
 
-script: php vendor/bin/phpunit --configuration /Users/vitaly/Work/random-tool/phpunit.xml
+script: php vendor/bin/phpunit --configuration phpunit.xml
