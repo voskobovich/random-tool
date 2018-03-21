@@ -5,9 +5,8 @@ namespace voskobovich\RandomTool;
 use voskobovich\RandomTool\interfaces\RandomNumberInterface;
 use voskobovich\RandomTool\interfaces\RandomStringInterface;
 
-class RandomE implements RandomStringInterface
+class RandomString implements RandomStringInterface
 {
-    private const LIBRARY_CHARACTER = 'E';
     private const LIBRARY_CHARACTER_FIRST = 'A';
     private const LIBRARY_CHARACTER_LAST = 'Z';
 
@@ -42,20 +41,17 @@ class RandomE implements RandomStringInterface
      * @param int $length Length of the generated string
      * @param bool $moreEntropy Increases the uniqueness of the generated value
      * @return string
+     * @throws \RuntimeException
      */
     public function getString(int $length = 1, bool $moreEntropy = false): string
     {
-        if (false === $moreEntropy) {
-            return self::LIBRARY_CHARACTER;
-        }
-
         $pos = $this->randomNumber->getNumber($moreEntropy);
         $library = $this->getCharacterLibrary();
 
-        if (false === empty($library[$pos])) {
-            return $library[$pos];
+        if (false === array_key_exists($pos, $library)) {
+            throw new \RuntimeException('The position ' . $pos . ' in the character library was not found.');
         }
 
-        return self::LIBRARY_CHARACTER;
+        return str_repeat($library[$pos], $length);
     }
 }

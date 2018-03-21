@@ -1,10 +1,10 @@
 <?php
 
-use voskobovich\RandomTool\RandomE;
+use voskobovich\RandomTool\RandomString;
 use voskobovich\RandomTool\RandomFour;
 
 $randomNumber = new RandomFour();
-$randomString = new RandomE($randomNumber);
+$randomString = new RandomString($randomNumber);
 
 $moreEntropy = false;
 echo $randomString->getString($moreEntropy) . PHP_EOL;

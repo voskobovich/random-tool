@@ -1,12 +1,12 @@
 <?php
 
-use voskobovich\RandomTool\CryptString;
-use voskobovich\RandomTool\RandomE;
+use voskobovich\RandomTool\StringCrypter;
+use voskobovich\RandomTool\RandomString;
 use voskobovich\RandomTool\RandomFour;
 
 $randomNumber = new RandomFour();
-$randomString = new RandomE($randomNumber);
-$cryptString = new CryptString($randomNumber, $randomString);
+$randomString = new RandomString($randomNumber);
+$cryptString = new StringCrypter($randomNumber, $randomString);
 
 $moreEntropy = false;
 $rawString = 'raw data';

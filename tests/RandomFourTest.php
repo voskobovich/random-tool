@@ -11,6 +11,7 @@ class RandomFourTest extends TestCase
      * @dataProvider getData
      * @param bool $moreEntropy
      * @param int $expected
+     * @throws \Exception
      */
     public function testGetNumber(bool $moreEntropy, int $expected): void
     {

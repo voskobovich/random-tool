@@ -5,4 +5,8 @@ use voskobovich\RandomTool\RandomFour;
 $randomSeven = new RandomFour();
 
 $moreEntropy = false;
-echo $randomSeven->getNumber($moreEntropy) . PHP_EOL;
+try {
+    echo $randomSeven->getNumber($moreEntropy) . PHP_EOL;
+} catch (Exception $exception) {
+    echo 'Exception: ' . $exception->getMessage();
+}
